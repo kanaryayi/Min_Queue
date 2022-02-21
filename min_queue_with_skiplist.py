@@ -36,14 +36,25 @@ class MinQueue(Queue):
 
 
 if __name__ == "__main__":
-    in_array = [3, 6, 7, 1, 12, 4, 5, 5, 5, 4, 2, 10, 2]
+    from numpy.random import choice
+    import time
+    import math
+
     min_queue = MinQueue()
-    list(map(min_queue.put, in_array))
-    min_queue.get()
-    min_queue.get()
-    min_queue.get()
-    print(min_queue.find_min())
-    min_queue.get()
-    print(min_queue)
-    min_queue.get()
-    print(min_queue.find_min())
+    t_number_elems = int(1e5)
+
+    in_arr = choice(t_number_elems, t_number_elems)
+
+    print(f"O(log N) : {(math.log2(t_number_elems))}")
+
+    start_time = time.time()
+    [min_queue.put(value) for value in in_arr]
+    print(f"enqueue time for {t_number_elems} elements : {time.time() - start_time} ")
+
+    start_time = time.time()
+    [min_queue.find_min() for _ in in_arr]
+    print(f"find min time for {t_number_elems} tries : {time.time() - start_time} ")
+
+    start_time = time.time()
+    [min_queue.get() for _ in in_arr]
+    print(f"dequeue time for {t_number_elems} tries : {time.time() - start_time} ")
