@@ -1,4 +1,4 @@
-# Min_Queue
+# Min Queue
 ## Min Queue implementation with Skiplist and Queue data structures
 
 enqueue time: O(logn) \
