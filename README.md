@@ -7,6 +7,6 @@ find_min: O(logn)
 
 ## Min Queue implementation with Van Emde Boas Tree and Queue data structures
 
-enqueue time O(log log M)
-dequeue time O(log log M)
+enqueue time O(log log M) \
+dequeue time O(log log M) \
 find_min O(1)
